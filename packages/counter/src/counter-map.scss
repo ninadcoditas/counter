@@ -1,0 +1,15 @@
+:host{
+  --counter-background-color: var(--background-01);
+  --counter-disabled-color: var(--disabled-text);
+  --counter-enabled-state:var(--secondary);
+  --counter-font-family: var(--primary-font-family);
+  --counter-font-color:	var(--primary-text);
+  --counter-supporting-font-family: var(--primary-font-family);
+  --counter-supporting-label-color:var(--secondary-text);
+
+}
+$counter-opacity:100%;
+$counter-font-size:1em;
+$counter-font-weight:semibold;
+$counter-supporting-label-size:1.4em;      
+$counter-supporting-label-weight:regular;
