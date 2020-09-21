@@ -9,6 +9,7 @@ export default class OrxeCounter extends LitElement {
     this.value = parseInt(this.getAttribute("value")!.toString())
     this.min = parseInt(this.getAttribute("min")!.toString())
     this.max = parseInt(this.getAttribute("max")!.toString())
+
   }
 
   /**
@@ -36,6 +37,7 @@ export default class OrxeCounter extends LitElement {
   * Implement `render` to define a template for button element.
   */
   render() {
+
     return html`
 <div class="counter">
     <div class="counter_label"> 
@@ -57,7 +59,9 @@ export default class OrxeCounter extends LitElement {
     </div>
     </div>
     `;
+
   }
+
   /**
    * This method handles decrement
    */
@@ -80,13 +84,13 @@ export default class OrxeCounter extends LitElement {
   handleEdgeCase() {
     let incrementButton = (<HTMLInputElement>this.shadowRoot!.getElementById("increment"))
     let decrementButton = (<HTMLInputElement>this.shadowRoot!.getElementById("decrement"))
-    if (this.value == this.max) {
+    if (this.value >= this.max) {
       incrementButton.disabled = true;
     }
     else {
       incrementButton.disabled = false;
     }
-    if (this.value == this.min) {
+    if (this.value <= this.min) {
       decrementButton.disabled = true;
     }
     else {
