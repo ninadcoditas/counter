@@ -9,8 +9,7 @@ A counter component in ORXe 3 allows users to increase or decrease a specified v
 ```html
 <!-- Default -->
  <orxe-counter value=1 max=10 min=0>
-    Adults <br>
-    (18+)
+    Adults
   </orxe-counter>
 
 ```
