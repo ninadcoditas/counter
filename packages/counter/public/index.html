@@ -24,8 +24,17 @@
 
 <body>
   <orxe-counter value=1 max=10 min=0>
-    Adults(18+)
+    Adults <br>
+    (18+)
   </orxe-counter>
 </body>
+<script>
+
+  const myElement = document.querySelector('orxe-counter');
+  myElement.addEventListener('value-changed', (e) => {
+    console.log(e)
+  });
+
+</script>
 
 </html>

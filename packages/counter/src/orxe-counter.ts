@@ -9,7 +9,6 @@ export default class OrxeCounter extends LitElement {
     this.value = parseInt(this.getAttribute("value")!.toString())
     this.min = parseInt(this.getAttribute("min")!.toString())
     this.max = parseInt(this.getAttribute("max")!.toString())
-
   }
 
   /**
@@ -39,10 +38,14 @@ export default class OrxeCounter extends LitElement {
   render() {
 
     return html`
-<div class="counter">
-    <div class="counter_label"> 
-    <slot></slot>
-    </div>
+  <div class="counter">
+
+  ${this.innerHTML.trim() != "" ?
+        html` 
+        <div class="counter_label"> 
+          <slot></slot>
+          </div>` :
+        html``}
 
     <div class="counter_container">
     <div class="counter_element">
@@ -96,8 +99,14 @@ export default class OrxeCounter extends LitElement {
     else {
       decrementButton.disabled = false;
     }
-  }
 
+    let event = new CustomEvent('value-changed', {
+      detail: {
+        value: this.value
+      }
+    });
+    this.dispatchEvent(event);
+  }
 
   /**
    *  Getting styles from components custom scss file
