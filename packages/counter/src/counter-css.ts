@@ -56,9 +56,5 @@ button:disabled{
     color:var(--counter-disabled-color);
 } 
 
-.hide{
-    display:none;
-}
-
 `;
 
