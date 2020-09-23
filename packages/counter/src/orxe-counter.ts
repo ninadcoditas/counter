@@ -54,13 +54,13 @@ export default class OrxeCounter extends LitElement {
 
     <div class="counter_container">
     <div class="counter_element">
-    <button @click="${this.decrement}" id="decrement" > 
+    <button @click="${this.decrement}" id="decrement" ?disabled="${this.value <= this.min}"> 
     - 
     </button>
     </div>  
     <div class="counter_element" id="value">${this.value}</div>
     <div class="counter_element">
-    <button @click="${this.increment}" id="increment" >
+    <button @click="${this.increment}" id="increment" ?disabled="${this.value >= this.max}">
     + 
     </button>
     </div>

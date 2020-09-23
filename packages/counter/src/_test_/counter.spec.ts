@@ -60,18 +60,18 @@ describe('orxe-counter', () => {
     }
   })
 
-  it('should disable + button when value = max value ', () => {
+  it('should disable + button when value >= max value ', () => {
     let currentValue = getValue();
-    if (currentValue = counterElement.max) {
+    if (currentValue >= counterElement.max) {
       console.log('curr ', currentValue);
       console.log('max ', counterElement.max);
       expect(getElement('#increment').hasAttribute('disabled')).toBeTruthy()
     }
   })
 
-  it('should disable - button when value = min value ', () => {
+  it('should disable - button when value <= min value ', () => {
     let currentValue = getValue();
-    if (currentValue = counterElement.min) {
+    if (currentValue <= counterElement.min) {
       expect(getElement('#decrement').hasAttribute('disabled')).toBeTruthy()
     }
   })
