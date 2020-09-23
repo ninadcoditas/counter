@@ -6,9 +6,23 @@ export default class OrxeCounter extends LitElement {
 
   constructor() {
     super();
-    this.value = parseInt(this.getAttribute("value")!.toString())
-    this.min = parseInt(this.getAttribute("min")!.toString())
-    this.max = parseInt(this.getAttribute("max")!.toString())
+
+    let value = this.getAttribute("value");
+    this.value = value == null ? 0 : parseInt(value.toString())
+
+
+    // this.value = parseInt(this.getAttribute("value")!.toString())
+
+    let min = this.getAttribute("min")
+    this.min = min == null ? 0 : parseInt(min.toString())
+
+    // this.min = parseInt(this.getAttribute("min")!.toString())
+
+    let max = this.getAttribute("max")
+
+    this.max = max == null ? 0 : parseInt(max.toString())
+
+    // this.max = parseInt(this.getAttribute("max")!.toString())
   }
 
   /**
@@ -53,7 +67,7 @@ export default class OrxeCounter extends LitElement {
     - 
     </button>
     </div>  
-    <div class="counter_element">${this.value}</div>
+    <div class="counter_element" id="value">${this.value}</div>
     <div class="counter_element">
     <button @click="${this.increment}" id="increment">
     + 
@@ -112,4 +126,5 @@ export default class OrxeCounter extends LitElement {
    *  Getting styles from components custom scss file
    */
   static styles = styles;
+
 }
