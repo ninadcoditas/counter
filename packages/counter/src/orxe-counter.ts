@@ -9,20 +9,11 @@ export default class OrxeCounter extends LitElement {
 
     let value = this.getAttribute("value");
     this.value = value == null ? 0 : parseInt(value.toString())
-
-
-    // this.value = parseInt(this.getAttribute("value")!.toString())
-
     let min = this.getAttribute("min")
     this.min = min == null ? 0 : parseInt(min.toString())
-
-    // this.min = parseInt(this.getAttribute("min")!.toString())
-
     let max = this.getAttribute("max")
-
     this.max = max == null ? 0 : parseInt(max.toString())
 
-    // this.max = parseInt(this.getAttribute("max")!.toString())
   }
 
   /**
@@ -63,13 +54,13 @@ export default class OrxeCounter extends LitElement {
 
     <div class="counter_container">
     <div class="counter_element">
-    <button @click="${this.decrement}" id="decrement"> 
+    <button @click="${this.decrement}" id="decrement" > 
     - 
     </button>
     </div>  
     <div class="counter_element" id="value">${this.value}</div>
     <div class="counter_element">
-    <button @click="${this.increment}" id="increment">
+    <button @click="${this.increment}" id="increment" >
     + 
     </button>
     </div>
@@ -78,6 +69,7 @@ export default class OrxeCounter extends LitElement {
     `;
 
   }
+
 
   /**
    * This method handles decrement

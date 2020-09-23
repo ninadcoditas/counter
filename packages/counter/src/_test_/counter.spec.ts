@@ -24,19 +24,57 @@ describe('orxe-counter', () => {
     await counter.remove();
   });
 
-  it('init', () => {
-    expect(parseInt(getValue())).toBe(1);
-  })
 
-  function getElement(id) {
-    return counterElement.shadowRoot.querySelector(id)
+  function getElement(selector) {
+    return counterElement.shadowRoot.querySelector(selector)
   }
 
   function getValue() {
-    let counterValue = getElement('#value').innerHTML.trim()
-    counterValue = counterValue.replace(/<\!--.*?-->/g, "");
-    return counterValue;
+    // let counterValue = getElement('#value').innerHTML.trim()
+    // counterValue = counterValue.replace(/<\!--.*?-->/g, "");
+    // return parseInt(counterValue);
+    return counterElement.value
   }
+
+  it('init', () => {
+    expect(counterElement.value).toBe(1);
+    expect(counterElement.min).toBe(0);
+    expect(counterElement.max).toBe(10);
+  })
+
+  it('should increase value on clicking + when value < max value', () => {
+    let currentValue = getValue();
+    if (currentValue < counterElement.max) {
+      getElement('#increment').click()
+      let newValue = getValue()
+      expect(newValue).toBe(currentValue + 1);
+    }
+  })
+
+  it('should decrease value on clicking - when value > min value', () => {
+    let currentValue = getValue();
+    if (currentValue > counterElement.min) {
+      getElement('#decrement').click()
+      let newValue = getValue()
+      expect(newValue).toBe(currentValue - 1)
+    }
+  })
+
+  it('should disable + button when value = max value ', () => {
+    let currentValue = getValue();
+    if (currentValue = counterElement.max) {
+      console.log('curr ', currentValue);
+      console.log('max ', counterElement.max);
+      expect(getElement('#increment').hasAttribute('disabled')).toBeTruthy()
+    }
+  })
+
+  it('should disable - button when value = min value ', () => {
+    let currentValue = getValue();
+    if (currentValue = counterElement.min) {
+      expect(getElement('#decrement').hasAttribute('disabled')).toBeTruthy()
+    }
+  })
 
   // function getByTestId(id: string): HTMLElement {
   //   return radioButton.shadowRoot.querySelector(`[data-testid=${id}]`);
