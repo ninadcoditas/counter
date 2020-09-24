@@ -5,8 +5,7 @@ export default class OrxeCounter extends LitElement {
     min: number;
     max: number;
     render(): import("lit-element").TemplateResult;
-    decrement(): void;
-    increment(): void;
-    handleEdgeCase(): void;
+    updated(changedProperties: any): void;
+    emitEvent(): void;
     static styles: import("lit-element").CSSResult;
 }

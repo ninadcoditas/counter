@@ -15,60 +15,43 @@ let OrxeCounter = class OrxeCounter extends LitElement {
         this.value = 0;
         this.min = 0;
         this.max = 0;
-        this.value = parseInt(this.getAttribute("value").toString());
-        this.min = parseInt(this.getAttribute("min").toString());
-        this.max = parseInt(this.getAttribute("max").toString());
+        let value = this.getAttribute("value");
+        this.value = value == null ? 0 : parseInt(value.toString());
+        let min = this.getAttribute("min");
+        this.min = min == null ? 0 : parseInt(min.toString());
+        let max = this.getAttribute("max");
+        this.max = max == null ? 0 : parseInt(max.toString());
     }
     render() {
         return html `
   <div class="counter">
-
   ${this.innerHTML.trim() != "" ?
             html ` 
         <div class="counter_label"> 
           <slot></slot>
           </div>` :
             html ``}
-
     <div class="counter_container">
-    <div class="counter_element">
-    <button @click="${this.decrement}" id="decrement"> 
-    - 
-    </button>
-    </div>  
-    <div class="counter_element">${this.value}</div>
-    <div class="counter_element">
-    <button @click="${this.increment}" id="increment">
-    + 
-    </button>
-    </div>
-    </div>
+      <div class="counter_element">
+        <button @click="${() => this.value--}" id="decrement" ?disabled="${this.value <= this.min}"> 
+          - 
+        </button>
+      </div>  
+      <div class="counter_element" id="value">${this.value}</div>
+      <div class="counter_element">
+        <button @click="${() => this.value++}" id="increment" ?disabled="${this.value >= this.max}">
+          + 
+        </button>
+      </div>
+      </div>
     </div>
     `;
     }
-    decrement() {
-        this.value--;
-        this.handleEdgeCase();
+    updated(changedProperties) {
+        console.log(changedProperties);
+        this.emitEvent();
     }
-    increment() {
-        this.value++;
-        this.handleEdgeCase();
-    }
-    handleEdgeCase() {
-        let incrementButton = this.shadowRoot.getElementById("increment");
-        let decrementButton = this.shadowRoot.getElementById("decrement");
-        if (this.value >= this.max) {
-            incrementButton.disabled = true;
-        }
-        else {
-            incrementButton.disabled = false;
-        }
-        if (this.value <= this.min) {
-            decrementButton.disabled = true;
-        }
-        else {
-            decrementButton.disabled = false;
-        }
+    emitEvent() {
         let event = new CustomEvent('value-changed', {
             detail: {
                 value: this.value
