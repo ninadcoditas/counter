@@ -33,3 +33,12 @@ Increment_Disabled.args = {
     label: "Adults",
 
 }
+
+export const Without_Label = Template.bind({})
+Without_Label.args = {
+    min: 0,
+    max: 10,
+    value: 10,
+    label: "",
+
+}
