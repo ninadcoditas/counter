@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://oski-cdn.s3.amazonaws.com/common/css/fonts/ProximaNova/Regular/Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://oski-cdn.s3.amazonaws.com/common/css/fonts/ProximaNova/Semi-Bold/Semi-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: italic;
+  font-weight: 400;
+  src: url("https://oski-cdn.s3.amazonaws.com/common/css/fonts/ProximaNova/Italic/Italic.otf") format("opentype");
+}
+@font-face {
+    font-family: "Proxima Nova";
+    font-style: italic;
+    font-weight: 600;
+    src: url("https://oski-cdn.s3.amazonaws.com/common/css/fonts/ProximaNova/Semi-Bold-Italic/Semi-Bold-Italic.otf") format("opentype");
+  }
+  
+
+  :root{--border-radius: 4px}:root{--spacing-01: 2px ;--spacing-02: 4px ;--spacing-03: 8px ;--spacing-04: 12px ;--spacing-05: 16px ;--spacing-06: 24px ;--spacing-07: 32px ;--spacing-08: 40px ;--spacing-09: 48px ;--spacing-10: 56px ;--spacing-11: 64px ;--spacing-12: 72px ;--touch-target-small: 36px;--touch-target-medium: 40px;--touch-target-large: 48px}:root{--primary: #238738;--secondary: #0A57A1;--tertiary: #13294E;--error: #D9222A;--warning: #D99B22;--neutral: #FFFFFF;--primary-text: #242C38;--secondary-text: #505660;--tertiary-text: #6A7078;--disabled-text: #969DA4;--links: #0A57A1;--pricing: #238738;--error-text: #D9222A;--star-rate: #DC791E;--separator-01: #E1E6ED;--global-bg: #F5F8FB;--infopanel-bg: #FDFCC7;--specialmessage-bg: #FAF0DE;--rating-excellent: #238738;--rating-great: #67AB04;--rating-average: #D99B22;--rating-poor: #D97322;--rating-bad: #D9222A;--success-title: #287d3d;--error-title: #da1414;--warning-title: #b95000;--info-title: #2e5aac;--success-panelfill: #edf9f0;--success-panelborder: #5aca76;--error-panelfill: #feefef;--error-panelborder: #f48989;--warning-panelfill: #fff8f2;--warning-panelborder: #b95000;--info-panelfill: #f0f3fa;--info-panelborder: #89a7e0;--hover-primary:#2FAA48;--focus-primary:#26a23f;--hover-secondary:#0C69C2;--focus-secondary:#0C69C2;--hover-tertiary:#0C69C2;--focus-tertiary:#0C69C2;--background-01: #F5F8FB}html,body{font-family:var(--global-font-family);font-size:var(--global-em-size);line-height:1.5}:root{--global-font-family: "Proxima Nova", sans-serif;--global-em-size: 10px}:root{--hd-fs: 2.4rem;--title-fs: 2rem;--sh--md-fs: 1.8rem;--sh--sm-fs: 1.6rem;--body--sb-fs: 1.4rem;--body--r-fs: 1.4rem;--caption-fs: 1.2rem;--cmp-txt--sb-fs: 1.6rem;--cmp-txt--r-fs: 1.6rem;--fc--md-r-fs: 1.8rem;--fc--md-sb-fs: 1.8rem;--fc--sm-fs: 1.6rem;--fc--r-fs: 1.4rem;--fc--sb-fs: 1.4rem;--fc--txt--r-fs: 1.6rem;--fw-sb: 600;--fw-r: 400;--lh-c: 1.5;--lh-h: 1.2;--lh-fc: 1}:root{--headline-font-size: 2.4rem;--title-font-size: 2rem;--subheading-font-size: 1.8rem;--subheading-secondary-font-size: 1.6rem;--body-font-size: 1.4rem;--body-secondary-font-size: 1.4rem;--caption-font-size: 1.2rem;--button-font-size: 1.6rem;--input-font-size: 1.6rem;--global-em-size: 10px;--font-weight-semi-bold: 600;--font-weight-regular: 400}.headline-font-style{font-size:var(--headline-font-size);font-weight:var(--font-weight-semi-bold);line-height:2.88rem}.title-font-style{font-size:var(--title-font-size);font-weight:var(--font-weight-semi-bold);line-height:2.4rem}.subheading-font-style{font-size:var(--subheading-font-size);font-weight:var(--font-weight-semi-bold);line-height:2.16rem}.subheading-secondary-font-style{font-size:var(--subheading-secondary-font-size);font-weight:var(--font-weight-semi-bold);line-height:1.92rem}.body-font-style{font-size:var(--body-font-size);font-weight:var(--font-weight-semi-bold);line-height:2.1rem}.body-secondary-font-style{font-size:var(--body-secondary-font-size);font-weight:var(--font-weight-regular);line-height:2.1rem}.caption-font-style{font-size:var(--caption-font-size);font-weight:var(--font-weight-regular);line-height:1.8rem}.button-font-style{font-size:var(--button-font-size);font-weight:var(--font-weight-semi-bold);line-height:1.6rem}.input-font-style{font-size:var(--input-font-size);font-weight:var(--font-weight-regular);line-height:1.6rem}
