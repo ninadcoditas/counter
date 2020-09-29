@@ -74,6 +74,14 @@ export default class OrxeCounter extends LitElement {
     this.emitEvent()
   }
 
+
+
+  connectedCallback() {
+    // @ts-ignore
+    this._saveInstanceProperties();
+    super.connectedCallback();
+  }
+
   /**
    * This method handles emits the value of counter
    */

@@ -2,8 +2,13 @@
 import { Counter } from './counter';
 
 export default {
-    title: 'Example/Counter'
+    title: 'Example/Counter',
+    component: 'orxe-counter',
 }
+
+// const Template = (args) => `<orxe-counter min=${args.min} max=${args.max} value=${args.value}>
+//         ${args.label}
+//     </orxe-counter>`
 
 const Template = (args) => Counter(args)
 
